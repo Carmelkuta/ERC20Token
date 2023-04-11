@@ -1,0 +1,9 @@
+version: '3'
+services:
+  brownie:
+    image: "brownie"
+    build: ./brownie
+    volumes:
+      - .:/workspace
+    command: /usr/bin/tail -f /dev/null
+    entrypoint: ''

@@ -1,0 +1,777 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "pk1",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "pk2",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "pk3",
+          "type": "address"
+        }
+      ],
+      "name": "getMultisigAddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "pk1",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "pk2",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "pk3",
+          "type": "address"
+        }
+      ],
+      "name": "registerMultisigAddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "multisigOwner",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "nonce",
+          "type": "uint256"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "r",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "s",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint8",
+              "name": "v",
+              "type": "uint8"
+            }
+          ],
+          "internalType": "struct Signature",
+          "name": "secondSig",
+          "type": "tuple"
+        }
+      ],
+      "name": "transfer2of3",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "ast": {
+    "absolutePath": "interfaces/IMultisigToken.sol",
+    "exportedSymbols": {
+      "IMultisigToken": [
+        235
+      ],
+      "Signature": [
+        192
+      ]
+    },
+    "id": 236,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 185,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:2"
+      },
+      {
+        "canonicalName": "Signature",
+        "id": 192,
+        "members": [
+          {
+            "constant": false,
+            "id": 187,
+            "mutability": "mutable",
+            "name": "r",
+            "nameLocation": "131:1:2",
+            "nodeType": "VariableDeclaration",
+            "scope": 192,
+            "src": "123:9:2",
+            "stateVariable": false,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 186,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "123:7:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 189,
+            "mutability": "mutable",
+            "name": "s",
+            "nameLocation": "177:1:2",
+            "nodeType": "VariableDeclaration",
+            "scope": 192,
+            "src": "169:9:2",
+            "stateVariable": false,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 188,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "169:7:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 191,
+            "mutability": "mutable",
+            "name": "v",
+            "nameLocation": "222:1:2",
+            "nodeType": "VariableDeclaration",
+            "scope": 192,
+            "src": "216:7:2",
+            "stateVariable": false,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint8",
+              "typeString": "uint8"
+            },
+            "typeName": {
+              "id": 190,
+              "name": "uint8",
+              "nodeType": "ElementaryTypeName",
+              "src": "216:5:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint8",
+                "typeString": "uint8"
+              }
+            },
+            "visibility": "internal"
+          }
+        ],
+        "name": "Signature",
+        "nameLocation": "107:9:2",
+        "nodeType": "StructDefinition",
+        "scope": 236,
+        "src": "100:155:2",
+        "visibility": "public"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IMultisigToken",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 193,
+          "nodeType": "StructuredDocumentation",
+          "src": "257:76:2",
+          "text": " @dev Interface of tokens supporting 2-out-of-3 multisig accounts."
+        },
+        "fullyImplemented": false,
+        "id": 235,
+        "linearizedBaseContracts": [
+          235
+        ],
+        "name": "IMultisigToken",
+        "nameLocation": "344:14:2",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 194,
+              "nodeType": "StructuredDocumentation",
+              "src": "365:155:2",
+              "text": " @dev registers a multisig address controlled by the public keys `pk1`, `pk2` and `pk3`.\n The returned address should always match "
+            },
+            "functionSelector": "03f4f769",
+            "id": 205,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "registerMultisigAddress",
+            "nameLocation": "534:23:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 201,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 196,
+                  "mutability": "mutable",
+                  "name": "pk1",
+                  "nameLocation": "566:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 205,
+                  "src": "558:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 195,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "558:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 198,
+                  "mutability": "mutable",
+                  "name": "pk2",
+                  "nameLocation": "579:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 205,
+                  "src": "571:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 197,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "571:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 200,
+                  "mutability": "mutable",
+                  "name": "pk3",
+                  "nameLocation": "592:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 205,
+                  "src": "584:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 199,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "584:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "557:39:2"
+            },
+            "returnParameters": {
+              "id": 204,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 203,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 205,
+                  "src": "615:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 202,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "615:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "614:9:2"
+            },
+            "scope": 235,
+            "src": "525:99:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 206,
+              "nodeType": "StructuredDocumentation",
+              "src": "630:97:2",
+              "text": " @dev returns the address controlled by the public keys `pk1`, `pk2` and `pk3`."
+            },
+            "functionSelector": "7c28a829",
+            "id": 217,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getMultisigAddress",
+            "nameLocation": "741:18:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 213,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 208,
+                  "mutability": "mutable",
+                  "name": "pk1",
+                  "nameLocation": "768:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 217,
+                  "src": "760:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 207,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "760:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 210,
+                  "mutability": "mutable",
+                  "name": "pk2",
+                  "nameLocation": "781:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 217,
+                  "src": "773:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 209,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "773:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 212,
+                  "mutability": "mutable",
+                  "name": "pk3",
+                  "nameLocation": "794:3:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 217,
+                  "src": "786:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 211,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "786:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "759:39:2"
+            },
+            "returnParameters": {
+              "id": 216,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 215,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 217,
+                  "src": "822:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 214,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "822:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "821:9:2"
+            },
+            "scope": 235,
+            "src": "732:99:2",
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 218,
+              "nodeType": "StructuredDocumentation",
+              "src": "837:664:2",
+              "text": " @dev Moves `amount` tokens from the multisig address `multisigOwner` to `recipient`.\n Returns a boolean value indicating whether the operation succeeded.\n `multisigOwner` must have been previously registered using `registerMultisigAddress`.\n `msg.sender` must be one of the public keys controlling `multisigOwner`, and `secondSig` must be a valid signature proving that\n a second controlling public key approved the transaction as well.\n `nonce` is used to prevent replay attacks (note that EVM does not allow a contract to access the actual transaction nonce).\n Emits a {Transfer} event."
+            },
+            "functionSelector": "f48e1b48",
+            "id": 234,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "transfer2of3",
+            "nameLocation": "1515:12:2",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 230,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 220,
+                  "mutability": "mutable",
+                  "name": "multisigOwner",
+                  "nameLocation": "1536:13:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 234,
+                  "src": "1528:21:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 219,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1528:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 222,
+                  "mutability": "mutable",
+                  "name": "recipient",
+                  "nameLocation": "1559:9:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 234,
+                  "src": "1551:17:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 221,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1551:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 224,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "1578:6:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 234,
+                  "src": "1570:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 223,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1570:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 226,
+                  "mutability": "mutable",
+                  "name": "nonce",
+                  "nameLocation": "1591:5:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 234,
+                  "src": "1586:10:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 225,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1586:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 229,
+                  "mutability": "mutable",
+                  "name": "secondSig",
+                  "nameLocation": "1617:9:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 234,
+                  "src": "1598:28:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Signature_$192_calldata_ptr",
+                    "typeString": "struct Signature"
+                  },
+                  "typeName": {
+                    "id": 228,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 227,
+                      "name": "Signature",
+                      "nameLocations": [
+                        "1598:9:2"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 192,
+                      "src": "1598:9:2"
+                    },
+                    "referencedDeclaration": 192,
+                    "src": "1598:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Signature_$192_storage_ptr",
+                      "typeString": "struct Signature"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1527:100:2"
+            },
+            "returnParameters": {
+              "id": 233,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 232,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 234,
+                  "src": "1646:4:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 231,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1646:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1645:6:2"
+            },
+            "scope": 235,
+            "src": "1506:146:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 236,
+        "src": "334:1321:2",
+        "usedErrors": []
+      }
+    ],
+    "src": "33:1622:2"
+  },
+  "contractName": "IMultisigToken",
+  "dependencies": [],
+  "offset": [
+    334,
+    1655
+  ],
+  "sha1": "803ec7ed7f0542bdfc9bfebe72de9776327048bc",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.0;\n\n\n/**\n * Ethereum-compatible signature\n */\nstruct Signature {\n    bytes32 r; // First 32 bytes of signature\n    bytes32 s; // Second 32 bytes of signature\n    uint8 v; // Final 1 byte of signature\n}\n\n/**\n * @dev Interface of tokens supporting 2-out-of-3 multisig accounts.\n */\ninterface IMultisigToken {\n    /**\n     * @dev registers a multisig address controlled by the public keys `pk1`, `pk2` and `pk3`.\n     * The returned address should always match \n     */\n    function registerMultisigAddress(address pk1, address pk2, address pk3) external returns (address);\n\n    /**\n     * @dev returns the address controlled by the public keys `pk1`, `pk2` and `pk3`.\n     */\n    function getMultisigAddress(address pk1, address pk2, address pk3) external pure returns (address);\n\n    /**\n     * @dev Moves `amount` tokens from the multisig address `multisigOwner` to `recipient`.\n     *\n     * Returns a boolean value indicating whether the operation succeeded.\n     * `multisigOwner` must have been previously registered using `registerMultisigAddress`.\n     * `msg.sender` must be one of the public keys controlling `multisigOwner`, and `secondSig` must be a valid signature proving that\n     * a second controlling public key approved the transaction as well.\n     *\n     * `nonce` is used to prevent replay attacks (note that EVM does not allow a contract to access the actual transaction nonce).\n     *\n     * Emits a {Transfer} event.\n     */\n    function transfer2of3(address multisigOwner, address recipient, uint256 amount, uint nonce, Signature calldata secondSig) external returns (bool);\n\n}",
+  "type": "interface"
+}
